@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title> Series </title>
+		
+		<link type="text/css" rel="stylesheet" href="css/simple_series.css"  media="screen,projection"/>
+		
+	</head>
+
+	<body>
+
+		<button onclick="solve()">test</button>
+		
+		<form>
+		<input type="radio" name="solve" value="resistance" id="resistance">Resistance<br>
+		<input type="radio" name="solve" value="voltage" id="voltage">Voltage<br>
+		<input type="radio" name="solve" value="current" id="current">Current
+		</form>
+		
+		<div id="items">
+			<div id="resistanceInstance" class="resistance"></div>
+		</div>
+
+		<div id="diagramContainer">
+			<div id="voltageInstance" class="voltage">
+				<div id="connector" class="connector"> </div> 
+				<p id="title"></p>
+			</div>
+		</div>
+		
+		
+	</body>
+
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jsPlumb-1.4.1-all-min.js "></script>
+	<script type="text/javascript" src="js/circuit_backend.js"></script>
+	<script type="text/javascript" src="js/ask_for_input.js"></script>
+	<script type="text/javascript" src="js/simple_series.js"></script>
+	
+</html>

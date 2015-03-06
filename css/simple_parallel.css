@@ -1,0 +1,36 @@
+
+	#diagramContainer {
+		padding: 20px;
+		width:80%; height: 400px;
+		border: 1px solid gray;
+		position: relative;
+		top: 100px;
+	}
+	
+	.resistance {
+		position: absolute;
+		height:80px; width: 80px;
+		border: 1px solid blue;
+	}
+	
+	.voltage {
+		position: absolute;
+		height:80px; width: 80px;
+		left: 100px;
+		border: 1px solid red;
+	}
+	
+	.dot {
+		position: absolute;
+		height:20px; width: 20px;
+		left: 200px;
+		background-color: #FF8360;
+	}
+	
+	.dotConnector{ 
+		width: 20px;
+		height: 20px;
+		background-color: darkgray;
+		cursor: pointer;
+	}
+		
