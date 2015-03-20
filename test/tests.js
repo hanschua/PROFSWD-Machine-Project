@@ -170,9 +170,9 @@ QUnit.test( "Series Solve Resistance 1", function( assert ) {
 	
 	var powerUsed = new Array();
 	
-	powerUsed.push(20);
-	powerUsed.push(15);
-	powerUsed.push(50);
+	powerUsed.push({powerUsed: 20});
+	powerUsed.push({powerUsed: 15});
+	powerUsed.push({powerUsed: 50});
 	
 	series.setResistance(powerUsed);
 	
@@ -184,9 +184,9 @@ QUnit.test( "Series Solve Resistance 1", function( assert ) {
 	
 	var resistance = series.solveResistance();
 	
-	assert.ok( resistance[0] == "20", "Passed!" );
-	assert.ok( resistance[1] == "15", "Passed!" );
-	assert.ok( resistance[2] == "50", "Passed!" );
+	assert.ok( resistance[0].resistance == "0.2", "Passed!" );
+	assert.ok( resistance[1].resistance == "0.15", "Passed!" );
+	assert.ok( resistance[2].resistance == "0.5", "Passed!" );
 	
 });
 
@@ -194,19 +194,19 @@ QUnit.test( "Series Solve Resistance 2", function( assert ) {
 
 	var series = new Series(null, new Array(), null);
 	
-	var voltage = 10;
+	var voltage = 23;
 	
 	series.setVoltage(voltage);
 	
 	var powerUsed = new Array();
 	
-	powerUsed.push(50);
-	powerUsed.push(65);
-	powerUsed.push(100);
-	powerUsed.push(120);
-	powerUsed.push(110);
-	powerUsed.push(105);
-	powerUsed.push(130);
+	powerUsed.push({powerUsed: 50});
+	powerUsed.push({powerUsed: 65});
+	powerUsed.push({powerUsed: 100});
+	powerUsed.push({powerUsed: 120});
+	powerUsed.push({powerUsed: 110});
+	powerUsed.push({powerUsed: 105});
+	powerUsed.push({powerUsed: 130});
 	
 	series.setResistance(powerUsed);
 	
@@ -219,13 +219,13 @@ QUnit.test( "Series Solve Resistance 2", function( assert ) {
 	
 	var resistance = series.solveResistance();
 	
-	assert.ok( resistance[0] == "50", "Passed!" );
-	assert.ok( resistance[1] == "65", "Passed!" );
-	assert.ok( resistance[2] == "100", "Passed!" );
-	assert.ok( resistance[3] == "120", "Passed!" );
-	assert.ok( resistance[4] == "110", "Passed!" );
-	assert.ok( resistance[5] == "105", "Passed!" );
-	assert.ok( resistance[6] == "130", "Passed!" );
+	assert.ok( resistance[0].resistance == "0.5", "Passed!" );
+	assert.ok( resistance[1].resistance == "0.65", "Passed!" );
+	assert.ok( resistance[2].resistance == "1", "Passed!" );
+	assert.ok( resistance[3].resistance == "1.2", "Passed!" );
+	assert.ok( resistance[4].resistance == "1.1", "Passed!" );
+	assert.ok( resistance[5].resistance == "1.05", "Passed!" );
+	assert.ok( resistance[6].resistance == "1.3", "Passed!" );
 	
 });
 
@@ -303,8 +303,6 @@ QUnit.test( "Series Solve Current 1", function( assert ) {
 	
 	var current = series.solveCurrent();
 	
-	console.log(current);
-	
 	assert.ok( current	== "0.01761", "Passed!" );
 	
 });
@@ -330,8 +328,6 @@ QUnit.test( "Series Solve Current 2", function( assert ) {
 	series.setResistance(resistors);
 	
 	var current = series.solveCurrent();
-	
-	console.log(current);
 	
 	assert.ok( current	== "3.38983", "Passed!" );
 	
