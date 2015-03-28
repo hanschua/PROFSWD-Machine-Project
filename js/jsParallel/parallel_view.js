@@ -47,9 +47,16 @@
 		
 		makeDraggable(id);
 		
-		newState.dblclick(function(e) {
-			remove(this, e);
-		});
+		if(jQuery.isTouchCapable()){
+			newState.doubletap(function(e) {
+				remove(this, e);
+			});
+		}
+		else {
+			newState.dblclick(function(e) {
+				remove(this, e);
+			});
+		}
 		
 		resistance_count++;
 		
