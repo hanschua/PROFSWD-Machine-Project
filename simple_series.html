@@ -136,6 +136,7 @@
 	<script type="text/javascript" src="js/jsSeries/series_solve_listener.js"></script>
 	<script type="text/javascript" src="js/jsSeries/series_view.js"></script>
 	
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 	
 	<script>
 		function showNotice(message) {
@@ -145,8 +146,10 @@
 		$(document).ready(function(){
 			// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 			$('.modal-trigger').leanModal();
+			$('#widget').draggable();
 		});
 	</script>
+	
 </body>
 	
 </html>
