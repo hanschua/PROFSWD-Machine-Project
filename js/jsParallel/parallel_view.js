@@ -47,7 +47,6 @@
 		
 		makeDraggable(id);
 		
-		
 		newState.dblclick(function(e) {
 			remove(this, e);
 		});
