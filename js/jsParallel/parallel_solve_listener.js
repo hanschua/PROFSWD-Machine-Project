@@ -2,8 +2,8 @@ function solve() {
 
 	var parallel = new Parallel(null, new Array(), new Array());
 	var parallelUIManager = new ParallelUIManager();
-	
 	var connections = jsPlumb.getConnections();
+	parallelUIManager.init(connections);
 	
 	if(document.getElementById("resistance").checked) {
 		var voltage = askVoltage();

@@ -39,6 +39,7 @@ function solve() {
 	var validConnections = validateGUI();
 	var series = new Series(null, new Array(), null);
 	var seriesUIManager = new SeriesUIManager();
+	seriesUIManager.init(validConnections);
 	
 	if (validConnections != null) {
 		if(document.getElementById("resistance").checked) {
@@ -100,12 +101,14 @@ function askResistance(connections) {
 }
 
 function askVoltage() {
+
 	var voltage = 0;
 		while(isNaN(voltage) || voltage == 0) {
 			voltage = parseFloat(prompt("voltage: " , "0"));
 		}
-
+		
 	return voltage;
+
 }
 
 function askCurrent() {

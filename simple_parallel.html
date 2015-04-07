@@ -11,19 +11,23 @@
 </head>
 <body>
 
-	<nav id="navbar" class="blue accent-2"> 
-	    <div class="nav-wrapper">
-	      <a href="simple_parallel.html" class="brand-logo">
-	        <span id="brand-text">Create Parallel Circuit</span>
-	      </a>
-
-	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="simple_parallel.html"><i class="mdi-navigation-refresh"></i></a></li>
-	        <li><a onclick="showNotice('Circuit successfully saved.')"><i class="mdi-content-save"></i></a></li>
-	        <li><a class="modal-trigger" href="#upload"><i class="mdi-file-file-upload"></i></a></li>
-	        <li><a onclick="showNotice('Circuit successfully downloaded!')"><i class="mdi-file-file-download"></i></a></li>
-	        <li><a href="simple_parallel.html"><i class="mdi-action-delete"></i></a></li>
-	      </ul>
+	<nav> 
+	    <div class="nav-wrapper blue accent-2">
+			<a href="simple_parallel.html" class="brand-logo">
+				<span id="brand-text">Parallel Circuit</span>
+			</a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i class="mdi-navigation-menu"></i></a>	
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a class="modal-trigger" href="#upload"><i class="mdi-file-file-upload"></i></a></li>
+				<li><a download="circuit.parallel" id='save' onclick='save("save", "parallel");'><i class="mdi-file-file-download"></i></a></li>
+				<li><a href="simple_parallel.html"><i class="mdi-action-delete"></i></a></li>
+			</ul>
+			<ul class="side-nav" id="mobile-demo">
+				<li><a class="modal-trigger" href="#upload">Upload Circuit</a></li>
+				<li><a download="circuit.parallel" id='save' onclick='save("save", "parallel");'>Download Circuit</a></li>
+				<li><a href="simple_parallel.html">Delete and New Circuit</a></li>
+				<li><a class="modal-trigger" href="#done">Exit</a></li>
+			</ul>
 	    </div>
 	</nav>
 
@@ -31,7 +35,7 @@
 	<div id="upload" class="modal">
 	    <div class="modal-content">
 	      	<i class="medium mdi-file-file-upload right"></i><h4>Upload File</h4>
-	      	<p>Find the '.sim' file in your computer.</p>
+	      	<p>Find the '.parallel' file in your computer.</p>
 
 				<!--Upload File Modal-->
 				<form action="#">
@@ -53,11 +57,11 @@
 	<div id="done" class="modal">
 	    <div class="modal-content">
 	      	<i class="medium mdi-alert-warning right"></i><h4>Warning</h4>
-	      	<p>You are about to quit. Do you want to save changes?</p>
+	      	<p>You are about to quit. All changes not downloaded will be lost.</p>
 	    </div>
 	    <div class="modal-footer">
-	      	<a class="waves-effect waves-red btn-flat modal-action modal-close">Cancel</a>
-	      	<a href="index.html" class="waves-effect waves-green btn-flat">Save and Exit</a>
+	      	<a class="waves-effect waves-red btn-flat modal-action modal-close">Disagree</a>
+	      	<a href="index.html" class="waves-effect waves-green btn-flat">Agree</a>
 	    </div>
   	</div>
 	
@@ -109,10 +113,8 @@
 
 				<div class="col s12 right-align">
 					<div class="section"></div>
-					<a class="btn waves-effect waves-light blue darken-1" onclick="solve()">Test
-						<i class="mdi-device-nfc right"></i></a>
-					<a class="btn waves-effect waves-light blue darken-1 modal-trigger" href="#done">Done
-						<i class="mdi-navigation-check right"></i></a>
+					<a class="btn waves-effect waves-light blue darken-1" onclick="solve()">Simulate<i class="mdi-device-nfc right"></i></a>
+					<a class="btn waves-effect waves-light blue darken-1 modal-trigger" href="#done">Exit</a>
 				</div>
 			</div>
 		</div>
@@ -149,6 +151,7 @@
 			// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 			$('.modal-trigger').leanModal();
 			$('#widget').draggable();
+			$(".button-collapse").sideNav();
 		});
 	</script>
 	
