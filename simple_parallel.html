@@ -19,12 +19,12 @@
 			<a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i class="mdi-navigation-menu"></i></a>	
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a class="modal-trigger" href="#upload"><i class="mdi-file-file-upload"></i></a></li>
-				<li><a download="circuit.parallel" id='save' onclick='save("save", "parallel");'><i class="mdi-file-file-download"></i></a></li>
+				<li><a onclick='save("parallel");'><i class="mdi-file-file-download"></i></a></li>
 				<li><a href="simple_parallel.html"><i class="mdi-action-delete"></i></a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
 				<li><a class="modal-trigger" href="#upload">Upload Circuit</a></li>
-				<li><a download="circuit.parallel" id='save' onclick='save("save", "parallel");'>Download Circuit</a></li>
+				<li><a onclick='save("circuit.parallel");'>Download Circuit</a></li>
 				<li><a href="simple_parallel.html">Delete and New Circuit</a></li>
 				<li><a class="modal-trigger" href="#done">Exit</a></li>
 			</ul>
@@ -121,16 +121,16 @@
 
 		
 	</div>
-            
 
-	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/jquery.jsPlumb-1.4.1-all-min.js "></script>
-	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-events.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-events.js"></script>
+	<script type="text/javascript" src="js/libraries/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/libraries/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/libraries/jquery.jsPlumb-1.4.1-all-min.js "></script>
+	<script type="text/javascript" src="js/libraries/materialize.js"></script>
+	<script type="text/javascript" src="js/libraries/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="js/libraries/jquery.mobile-events.min.js"></script>
+	<script type="text/javascript" src="js/libraries/jquery.mobile-events.js"></script>
+	<script type="text/javascript" src="js/libraries/FileSaver.js"></script>
 	
-	<script type="text/javascript" src="js/materialize.js"></script>
 	
 	<script type="text/javascript" src="js/UI.js"></script>
 	<script type="text/javascript" src="js/circuit.js"></script>		
@@ -140,6 +140,7 @@
 	<script type="text/javascript" src="js/jsParallel/parallel_UI_manager.js"></script>
 	<script type="text/javascript" src="js/jsParallel/parallel_solve_listener.js"></script>
 	<script type="text/javascript" src="js/jsParallel/parallel_view.js"></script>
+	<script type="text/javascript" src="js/jsParallel/load_parallel.js"></script>
 	
 	
 	<script>

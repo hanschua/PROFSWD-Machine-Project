@@ -3,26 +3,14 @@ function trueRound(value, digits){
 	return ((Math.round((value*Math.pow(10,digits)).toFixed(digits-1))/Math.pow(10,digits)).toFixed(digits)) * 1;
 }
 
-function save(id) {
-	var textFile = null;
+function save(filename) {
 	
 	var text = makeText();
 	
     var data = new Blob([text], {type: 'text/plain'});
 	
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-	var link = document.getElementById(id);
+    saveAs(data, filename);
 	
-	//alert(position.top);
-    link.href = textFile;
-	
-    //return textFile;
 }
 
 function makeText() {
